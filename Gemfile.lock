@@ -47,6 +47,12 @@ GEM
     brice (0.4.0)
       nuggets
     builder (3.2.2)
+    capybara (2.4.4)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.6.0)
@@ -172,6 +178,8 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -180,6 +188,7 @@ DEPENDENCIES
   awesome_print
   bootstrap-sass (~> 3.3.5)
   brice
+  capybara
   factory_girl_rails (~> 4.5)
   haml-rails (~> 0.9)
   hirb
