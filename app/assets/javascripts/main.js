@@ -3,5 +3,5 @@ window.App = {
   Collections: {},
   Router: {},
   Models: {},
-  Views: {},
+  Views: {}
 };
