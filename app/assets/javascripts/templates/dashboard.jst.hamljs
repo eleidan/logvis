@@ -1,0 +1,9 @@
+.uploader
+
+.panel.panel-primary.passing-and-failing-builds{style:'display:none'}
+  .panel-heading passing and failing builds per day
+  .panel-body
+
+.panel.panel-primary.build-time-vs-time{style:'display:none'}
+  .panel-heading build time vs. time
+  .panel-body
