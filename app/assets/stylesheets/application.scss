@@ -1,6 +1,8 @@
-/*
- *= require_tree .
- *= require_self
- */
-@import "bootstrap-sprockets";
-@import "bootstrap";
+// = require_tree .
+// = require_self
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+body {
+  margin-top: 55px;
+}
