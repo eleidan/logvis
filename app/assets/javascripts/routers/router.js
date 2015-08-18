@@ -5,13 +5,7 @@ App.Router = Backbone.Router.extend({
 
   dashboard: function() {
     $('section').html("Dashboard =)");
-    App.dashboard = new App.Views.Dashboard();
+    dataset = new Backbone.Model();
+    App.dashboard = new App.Views.Dashboard({model:dataset});
   }
-
-  // teams: function() {
-  //   $('.content').html("You should see the list for Teams... that's all I can tell you, dude O_O");
-  //   var collection = new App.Collections.Teams();
-  //   App.teams = new App.Views.Teams({'collection':collection});
-  //   collection.fetch();
-  // },
 });
