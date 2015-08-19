@@ -17,10 +17,8 @@ App.Views.Dashboard = Backbone.View.extend({
   },
 
   renderCharts: function() {
-    var data = $.csv.toObjects(this.dataset.get('content')),
-        statuses = [];
+    var data = this.dataset.get('content');
 
-    statuses = App.Helpers.prepareData(data);
     $('.passing-and-failing-builds').show();
     $('.build-time-vs-time').show();
     $('.passing-and-failing-builds .panel-body').highcharts({
@@ -34,7 +32,7 @@ App.Views.Dashboard = Backbone.View.extend({
         },
 
         xAxis: {
-            categories: _.keys(statuses)
+            categories: _.keys(data)
         },
 
         yAxis: {
@@ -61,10 +59,10 @@ App.Views.Dashboard = Backbone.View.extend({
 
         series: [{
             name: 'pass',
-            data: _.pluck(_.values(statuses),'pass'),
+            data: _.pluck(_.values(data),'pass'),
         }, {
             name: 'fail',
-            data: _.pluck(_.values(statuses),'fail'),
+            data: _.pluck(_.values(data),'fail'),
         }]
     });
   }

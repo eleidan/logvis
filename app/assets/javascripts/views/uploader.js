@@ -12,7 +12,10 @@ App.Views.Uploader = Backbone.View.extend({
     this.reader = new FileReader();
 
     this.reader.onload = function(event) {
-      that.model.set('content', event.target.result);
+      var rawData = $.csv.toObjects(event.target.result),
+          data    = App.Helpers.prepareData(rawData);
+
+      that.model.set('content', data);
     };
 
     this.reader.onerror = function(event) {
