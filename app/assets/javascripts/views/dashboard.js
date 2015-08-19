@@ -17,7 +17,7 @@ App.Views.Dashboard = Backbone.View.extend({
   },
 
   renderCharts: function() {
-    var data = this.dataset.get('content');
+    var data = this.dataset.get('data');
 
     if (!_.isUndefined(this.stackedColumnChart)) {
       this.stackedColumnChart.remove();

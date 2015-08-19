@@ -5,7 +5,7 @@ App.Router = Backbone.Router.extend({
 
   dashboard: function() {
     $('section').html("Dashboard =)");
-    dataset = new Backbone.Model();
+    dataset = new App.Models.Dataset();
     App.dashboard = new App.Views.Dashboard({model:dataset});
   }
 });

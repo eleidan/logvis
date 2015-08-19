@@ -9,13 +9,16 @@ App.Views.Uploader = Backbone.View.extend({
   initialize: function(options) {
     var that = this;
     this.model = options.model;
+
+    this.listenTo(this.model, 'invalid', this.showError);
+
     this.reader = new FileReader();
 
     this.reader.onload = function(event) {
       var rawData = $.csv.toObjects(event.target.result),
           data    = App.Helpers.prepareData(rawData);
 
-      that.model.set('content', data);
+      that.model.set('data', data, {validate: true});
     };
 
     this.reader.onerror = function(event) {
@@ -27,6 +30,10 @@ App.Views.Uploader = Backbone.View.extend({
     this.$el.html(this.template());
 
     return this;
+  },
+
+  showError: function(event) {
+    alert('Failed to load data.\nWrong logs?');
   },
 
   onFileChange: function(event) {
