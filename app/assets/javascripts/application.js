@@ -8,6 +8,7 @@
 //= require highcharts
 //
 //= require       main.js
+//= require_tree ./helpers
 //= require_tree ./templates
 //= require_tree ./views
 //= require_tree ./routers
