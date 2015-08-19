@@ -4,6 +4,9 @@
 //= require underscore
 //= require backbone
 //
+//= require jquery-csv
+//= require highcharts
+//
 //= require       main.js
 //= require_tree ./templates
 //= require_tree ./views
