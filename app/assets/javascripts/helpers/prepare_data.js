@@ -3,11 +3,13 @@
 // {
 //   '2015-05-10': {
 //     'pass': 3,
-//     'fail': 1
+//     'fail': 1,
+//     'time': 738
 //   },
 //   '2015-05-11': {
 //     'pass': 0,
-//     'fail': 1
+//     'fail': 1,
+//     'time': 535
 //   }
 // }
 //
@@ -28,6 +30,7 @@ App.Helpers.prepareData = function(data) {
       } else {
         result[date].pass += 1;
       }
+      result[date].time += parseFloat(item.duration);
 
     } else {
       days.push(date);
@@ -36,6 +39,7 @@ App.Helpers.prepareData = function(data) {
       } else {
         result[date] = {'pass':1, 'fail':0};
       }
+      result[date].time = parseFloat(item.duration);
     }
   });
 
