@@ -18,7 +18,6 @@
 App.Helpers.prepareData = function(data) {
   var hash = {},
       isError = false,
-      days = [],
       date = '',
       result = [];
 
@@ -27,7 +26,7 @@ App.Helpers.prepareData = function(data) {
     date = item.created_at.slice(0,10);
     isError = item.summary_status === 'error';
 
-    if (_.contains(days, date)) {
+    if (hash.hasOwnProperty(date)) {
 
       if (isError) {
         hash[date].fail += 1;
@@ -37,7 +36,6 @@ App.Helpers.prepareData = function(data) {
       hash[date].time += parseFloat(item.duration);
 
     } else {
-      days.push(date);
       if (isError) {
         hash[date] = {'pass':0, 'fail':1};
       } else {
