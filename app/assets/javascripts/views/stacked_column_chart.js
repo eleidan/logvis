@@ -19,23 +19,23 @@ App.Views.StackedColumnChart = Backbone.View.extend({
 
     this.$('.well').highcharts({
       chart: {
-          type: 'column'
+        type: 'column'
       },
 
       title: {
-          text: 'passing and failing builds per day'
+        text: 'passing and failing builds per day'
       },
 
       xAxis: {
-          categories: _.keys(dataset)
+        categories: _.pluck(dataset, 'date')
       },
 
       yAxis: {
-          allowDecimals: false,
-          min: 0,
-          title: {
-              text: 'Number of builds'
-          }
+        allowDecimals: false,
+        min: 0,
+        title: {
+          text: 'Number of builds'
+        }
       },
 
       tooltip: {
