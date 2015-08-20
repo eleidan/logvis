@@ -27,7 +27,8 @@ App.Views.StackedColumnChart = Backbone.View.extend({
       },
 
       xAxis: {
-        categories: _.pluck(dataset, 'date')
+        categories: _.pluck(dataset, 'date'),
+        plotBands: App.Helpers.preparePlotBands(dataset)
       },
 
       yAxis: {
@@ -54,10 +55,10 @@ App.Views.StackedColumnChart = Backbone.View.extend({
 
       series: [{
         name: 'pass',
-        data: _.pluck(_.values(dataset),'pass'),
+        data: _.pluck(dataset,'pass'),
       }, {
         name: 'fail',
-        data: _.pluck(_.values(dataset),'fail'),
+        data: _.pluck(dataset,'fail'),
       }]
     });
 
