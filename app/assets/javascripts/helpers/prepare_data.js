@@ -1,24 +1,28 @@
 // Preprocess data to get them ready for charts.
 // Create new dataset with the following properties:
-// {
-//   '2015-05-10': {
+// [
+//   {
+//     'date': '2015-05-10',
 //     'pass': 3,
 //     'fail': 1,
 //     'time': 738
 //   },
-//   '2015-05-11': {
+//   {
+//     'date': '2015-05-11',
 //     'pass': 0,
 //     'fail': 1,
 //     'time': 535
 //   }
-// }
+// ]
 //
 App.Helpers.prepareData = function(data) {
-  var result = {},
+  var hash = {},
       isError = false,
       days = [],
-      date = '';
+      date = '',
+      result = [];
 
+  // Accumulate all the values and attach them to date
   _.each(data, function(item) {
     date = item.created_at.slice(0,10);
     isError = item.summary_status === 'error';
@@ -26,21 +30,27 @@ App.Helpers.prepareData = function(data) {
     if (_.contains(days, date)) {
 
       if (isError) {
-        result[date].fail += 1;
+        hash[date].fail += 1;
       } else {
-        result[date].pass += 1;
+        hash[date].pass += 1;
       }
-      result[date].time += parseFloat(item.duration);
+      hash[date].time += parseFloat(item.duration);
 
     } else {
       days.push(date);
       if (isError) {
-        result[date] = {'pass':0, 'fail':1};
+        hash[date] = {'pass':0, 'fail':1};
       } else {
-        result[date] = {'pass':1, 'fail':0};
+        hash[date] = {'pass':1, 'fail':0};
       }
-      result[date].time = parseFloat(item.duration);
+      hash[date].time = parseFloat(item.duration);
     }
+  });
+
+  // Compose records by injecting date
+  result = _.map(hash, function(value, key) {
+    value.date = key;
+    return value;
   });
 
   return result;
