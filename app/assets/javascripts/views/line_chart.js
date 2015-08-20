@@ -27,7 +27,7 @@ App.Views.LineChart = Backbone.View.extend({
       },
 
       xAxis: {
-        categories: _.keys(dataset)
+        categories: _.pluck(dataset, 'date')
       },
 
       yAxis: {
