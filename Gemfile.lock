@@ -190,6 +190,7 @@ DEPENDENCIES
   brice
   capybara
   factory_girl_rails (~> 4.5)
+  haml (~> 4.0.7)
   haml-rails (~> 0.9)
   hirb
   jasmine
