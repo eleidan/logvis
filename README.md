@@ -1,6 +1,7 @@
 #   LogVis
 Application for logs visualization
 
+## Installation and running
 1. Clone repository
 1. Install dependencies:
 
@@ -8,7 +9,7 @@ Application for logs visualization
   bundle install
   ```
 
-1. Create `secrets.yml`
+1. Create `secrets.yml`:
   ```
   touch config/secrets.yml
   ```
