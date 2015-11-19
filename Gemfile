@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.2.3'
 
-gem 'rails', '4.2.1'
-gem 'sqlite3'
+gem 'rails', '4.2.3'
 gem 'jbuilder', '~> 2.0'
 
 group :development, :test do
