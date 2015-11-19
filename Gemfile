@@ -19,6 +19,8 @@ group :development do
   gem 'awesome_print',  require: false
 end
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Assets
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -27,6 +29,7 @@ gem 'haml', '~> 4.0.7'
 gem 'haml-rails', '~> 0.9'
 gem 'ruby-haml-js'
 gem 'bootstrap-sass', '~> 3.3.5'
+
 
 # Heroku
 gem 'rails_12factor', group: :production
