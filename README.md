@@ -9,25 +9,13 @@ Application for logs visualization
   bundle install
   ```
 
-1. Create `secrets.yml`:
-  ```
-  touch config/secrets.yml
-  ```
-
 1. Generate secret token:
   ```
-  rake secret
+  echo SECRET_KEY_BASE=`rake secret` > .env
   ```
 
-1. Set `secrets.yml` to the following content:
-  ```
-  production:
-    secret_key_base: <secret_key>
-  ```
-Replace `<secret_key>` with result of `rake secret`.
-
-1. Run application in production environment: 
+1. Run application:
 
   ```
-  rails s -e production
+  rails s
   ```
