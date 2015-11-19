@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.3'
+
 gem 'rails', '4.2.1'
 gem 'sqlite3'
 gem 'jbuilder', '~> 2.0'
@@ -7,7 +9,7 @@ gem 'jbuilder', '~> 2.0'
 group :development, :test do
   gem 'spring'
   gem 'jasmine'
-  gem 'rspec-rails',  '~> 3.0'
+  gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.5'
 end
@@ -26,3 +28,6 @@ gem 'haml', '~> 4.0.7'
 gem 'haml-rails', '~> 0.9'
 gem 'ruby-haml-js'
 gem 'bootstrap-sass', '~> 3.3.5'
+
+# Heroku
+gem 'rails_12factor', group: :production
