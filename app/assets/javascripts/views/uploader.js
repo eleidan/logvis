@@ -41,8 +41,6 @@ App.Views.Uploader = Backbone.View.extend({
 
     if (file.size > FILE_SIZE_LIMIT) {
       alert('File is too big!');
-    } else if (file.type !== 'text/csv'){
-      alert('Only files of type text/csv are allowed!');
     } else {
       this.reader.readAsText(file);
     }
